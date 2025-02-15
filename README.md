@@ -15,7 +15,7 @@ This repository contains the following add-ons
 
 ![Supports amd64 Architecture][amd64-shield]
 
-_Example add-on to use as a blueprint for new add-ons._
+_AUTHELIA._
 
 <!--
 
