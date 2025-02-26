@@ -7,7 +7,7 @@ arch:
   - armv7
   - aarch64
 startup: "services"
-boot: "auto"
+#boot: "auto"
 ports:
   8081/tcp: 8081
 #options: {}
