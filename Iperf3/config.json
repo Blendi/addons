@@ -1,0 +1,25 @@
+{
+    "name": "iPerf3",
+    "version": "0.1.0",
+    "slug": "iperf3",
+    "description": "iPerf3 add-on for Home Assistant",
+    "arch": ["armv7", "amd64", "armhf", "aarch64", "i386"],
+    "url": "https://github.com/fredrikbaberg/hassio-addons",
+    "boot": "manual",
+    "ports": {
+        "5201/tcp": 5201,
+        "5201/udp": 5201
+    },
+    "ports_description": {
+        "5201/tcp": "TCP",
+        "5201/udp": "UDP"
+    },
+    "homeassistant": "0.108.0",
+    "options": {
+        "arguments": "-s"
+    },
+    "schema": {
+        "arguments": "str"
+    },
+    "image": "ghcr.io/fredrikbaberg/addon-iperf3-{arch}"
+}
