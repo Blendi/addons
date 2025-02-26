@@ -1,8 +1,7 @@
-#!/bin/sh
-echo "Starting MeTube Add-on..."
-
-# Ensure the downloads directory exists
-mkdir -p /shared/mp3files
-
-# Start MeTube
-exec python3 /app/server.py
+#!/bin/bash
+# Start the addon
+docker run --rm -d \
+  --name=metube \
+  -p 8081:8081 \
+  -v /path/to/downloads:/share/youtube_music \
+  ghcr.io/alexta69/metube
