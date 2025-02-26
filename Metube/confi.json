@@ -1,0 +1,22 @@
+{
+  "name": "MeTube",
+  "version": "1.0.0",
+  "slug": "metube",
+  "description": "A YouTube music downloader",
+  "arch": [
+    "amd64",
+    "armv7",
+    "arm64",
+    "i386",
+    "aarch64"
+  ],
+  "image": "ghcr.io/alexta69/metube",
+  "startup": "application",
+  "ports": {
+    "8081": 8081
+  },
+  "volumes": [
+    "/share/youtube_music:/downloads"
+  ],
+  "webui": "http://[HOST]:8081"
+}
