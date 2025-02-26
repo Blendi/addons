@@ -1,18 +1,18 @@
-name: "MeTube"
-version: "1.0.0"
-slug: "metube"
-description: "A web-based YouTube downloader"
+name: MeTube
+version: 1.0.0
+slug: metube
+description: A YouTube music downloader
 arch:
   - amd64
   - armv7
+  - arm64
+  - i386
   - aarch64
-startup: "services"
-#boot: "auto"
+image: ghcr.io/alexta69/metube
+startup: application
+#boot: auto
 ports:
-  8081/tcp: 8081
-#options: {}
-#schema: {}
-map:
-#  - homeassistant_config
-  - media
-  - share
+  8081: 8081
+volumes:
+  - /path/to/downloads:/share/youtube_music
+webui: http://[HOST]:8081
