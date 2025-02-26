@@ -14,5 +14,5 @@ startup: application
 ports:
   8081: 8081
 volumes:
-  - /path/to/downloads:/share/youtube_music
+  - /share/youtube_music:/downloads
 webui: http://[HOST]:8081
