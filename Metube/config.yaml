@@ -10,9 +10,9 @@ startup: "services"
 boot: "auto"
 ports:
   8081/tcp: 8081
-options: {}
-schema: {}
+#options: {}
+#schema: {}
 map:
-  - config
+#  - homeassistant_config
   - media
   - share
