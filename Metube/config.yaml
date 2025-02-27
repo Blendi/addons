@@ -21,7 +21,7 @@ ports:
   8081/tcp: 8081
 ports_description:
   8081/tcp: "MeTube Web Port"
-volumes:
-  - /share/youtube_music:/downloads
+#volumes:
+#  - /share/youtube_music:/downloads
 webui: http://[HOST]:[PORT:8081]
 #watchdog: tcp://[HOST]:[PORT:8081]
