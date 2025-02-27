@@ -9,7 +9,7 @@ url: https://github.com/alexta69/metube/pkgs/container/metube
 map:
   - config:r
   - share:rw
-image: ghcr.io/alexta69/metube
+image: "ghcr.io/alexta69/metube"
 init: false
 ingress: true
 legacy: true
