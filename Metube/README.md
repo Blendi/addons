@@ -18,10 +18,12 @@ Add this repository as a custom add-on source in Home Assistant.
 Install the "MeTube" add-on.
 Start the add-on and access it via http://homeassistant.local:8081.
 Configuration
-No additional configuration is required.
+You have to manually create a folder in /media/My_Music/Youtube in order so that all the downloads go automatically to Homeassistant Media.
 
 Ports
 8081 → MeTube web interface
+
+
 
 A [Home Assistant](https://home-assistant.io) add-on repository for [Metube]((https://github.com/alexta69/metube)).
 
