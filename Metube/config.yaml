@@ -9,8 +9,8 @@ url: "https://github.com/alexta69/metube/pkgs/container/metube"
 map:
   - type: media
     read_only: False
-  - type: share
-    read_only: False
+#  - type: share
+#    read_only: False
   - type: data
     read_only: False
 init: "false"
