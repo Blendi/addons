@@ -5,7 +5,7 @@
 		"armv7"
 	],
 	"backup_exclude": [
-		"**/cache"
+		"**/cache/**"
 	],
 	"description": "Modern Music Server and Streamer compatible with Subsonic/Airsonic",
 	"devices": [
