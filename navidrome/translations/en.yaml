@@ -94,3 +94,7 @@ configuration:
     name: Enable Insights Collector
     description: >-
       Controls whether the server will run its Anonymous Data Collection feature to help improve the project
+  ND_LOGLEVEL:
+    name: Navidrome Log Level
+    description: >-
+      Switch between log levels, Error, Warn, Info, Debug and Trace
