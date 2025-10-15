@@ -9,22 +9,22 @@ url: "https://ghcr.io/kiwix/kiwix-serve:3.7.0"
 map:
   - type: share
     read_only: False
-  #- type: data
- #   read_only: False
+  - type: data
+    read_only: False
 init: "false"
 #ingress: "true"
 #ingress_port: "8081"
 #ingress_stream: true
 startup: "application"
 ports:
-  8080/tcp: "8080"
+  8085/tcp: "8085"
 ports_description:
-  8080/tcp: "Kiwix Web Port"
-webui: "http://[HOST]:[PORT:8080]"
+  8085/tcp: "Kiwix Web Port"
+webui: "http://[HOST]:[PORT:8085]"
 #options:
 #  data_location: "/media/MeTube"
 #  data_location: "/media/My_Music/Youtube"
 #schema:
 #  data_location: "str?"
-#environment:
-  #DOWNLOAD_DIR: "/share/zim"
+environment:
+  data: "/share/zim"
