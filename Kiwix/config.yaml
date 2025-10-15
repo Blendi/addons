@@ -9,8 +9,8 @@ url: "https://ghcr.io/kiwix/kiwix-serve:3.7.0"
 map:
   - type: share
     read_only: False
-  - type: data
-    read_only: False
+  #- type: data
+ #   read_only: False
 init: "false"
 #ingress: "true"
 #ingress_port: "8081"
