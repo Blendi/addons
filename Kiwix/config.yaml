@@ -1,0 +1,30 @@
+name: "Kiwix"
+description: "Kiwix Encyclopedia"
+version: "0.1.0"
+slug: "folder"
+arch:
+  - amd64
+  - armv7
+url: "https://github.com/alexta69/metube/pkgs/container/metube"
+map:
+  - type: share
+    read_only: False
+  - type: data
+    read_only: False
+init: "false"
+#ingress: "true"
+#ingress_port: "8081"
+#ingress_stream: true
+startup: "application"
+ports:
+  8081/tcp: "8081"
+ports_description:
+  8081/tcp: "Kiwix Web Port"
+webui: "http://[HOST]:[PORT:8081]"
+#options:
+#  data_location: "/media/MeTube"
+#  data_location: "/media/My_Music/Youtube"
+#schema:
+#  data_location: "str?"
+environment:
+  DOWNLOAD_DIR: "/media/My_Music/Youtube"
