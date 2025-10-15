@@ -26,5 +26,5 @@ webui: "http://[HOST]:[PORT:8080]"
 #  data_location: "/media/My_Music/Youtube"
 #schema:
 #  data_location: "str?"
-environment:
-  DOWNLOAD_DIR: "/share/zim"
+#environment:
+  #DOWNLOAD_DIR: "/share/zim"
