@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#!/usr/bin/env bashio
 echo "Starting MeTube..."
 set -e
 
