@@ -1,24 +1,33 @@
-# Use the official base image for Home Assistant add-ons
+# Use the base image for Home Assistant add-ons (based on Alpine)
 FROM ghcr.io/hassio-addons/base:12.2.7
 
-# Install Kiwix Tools
-RUN apt-get update && apt-get install -y \
-    kiwix-tools \
-    curl \
-    bash \
-    && rm -rf /var/lib/apt/lists/*
+# Set the maintainer label
+LABEL maintainer="Jan Szumiec <jan.szumiec@gmail.com>"
 
-# Create the necessary directories for the add-on to run
-RUN mkdir -p /data/zim
+# Install required dependencies
+RUN apk add --no-cache curl bzip2
 
-# Copy the run.sh script into the container
-COPY run.sh /run.sh
+# Download Kiwix and extract it
+RUN curl -k https://ftp.fau.de/kiwix/bin/0.10/kiwix-0.10-linux-x86_64.tar.bz2 | tar -xj \
+    && mv kiwix-* /kiwix
 
-# Make the run.sh script executable
-RUN chmod +x /run.sh
+# Create necessary directories
+RUN mkdir -p /kiwix-data
 
 # Set the working directory
-WORKDIR /data
+WORKDIR /kiwix-data
 
-# The default command to run when the container starts
-CMD [ "/run.sh" ]
+# Set the volumes
+VOLUME /kiwix-data
+
+# Expose the Kiwix server port
+EXPOSE 8080
+
+# Copy the custom run.sh script that will start Kiwix with proper configuration
+COPY run.sh /run.sh
+
+# Make sure the script is executable
+RUN chmod +x /run.sh
+
+# Set the entry point to run the script
+ENTRYPOINT ["/run.sh"]
