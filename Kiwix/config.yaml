@@ -5,7 +5,9 @@ slug: kiwix-tools
 arch:
   - amd64
   - armv7
-url: "https://ghcr.io/kiwix/kiwix-tools:3.7.0"
+  - aarch64
+  - armhf
+url: "https://www.kiwix.org"
 map:
   - type: share
     read_only: False
@@ -21,8 +23,8 @@ ports:
 ports_description:
   8085/tcp: "Kiwix Web Port"
 webui: "http://[HOST]:[PORT:8085]"
-volumes:
-  - /share/zim
+#volumes:
+#  - /share/zim
 hassio_api: true
 #options:
 #  data_location: "/media/MeTube"
