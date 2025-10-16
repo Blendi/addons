@@ -1,7 +1,7 @@
-name: "MeTube"
+name: "MeTube TEST"
 description: "YouTube music downloader"
 version: "0.1.27"
-slug: "folder"
+slug: "metube"
 arch:
   - amd64
   - armv7
@@ -23,10 +23,10 @@ ports:
 ports_description:
   8081/tcp: "MeTube Web Port"
 webui: "http://[HOST]:[PORT:8081]"
-#options:
-#  data_location: "/media/MeTube"
-#  data_location: "/media/My_Music/Youtube"
-#schema:
-#  data_location: "str?"
-environment:
-  DOWNLOAD_DIR: "/media/My_Music/Youtube"
+options:
+  #data_location: "/media/My_Music/MeTube"
+  DOWNLOAD_DIR: "/media/My_Music/MeTube"
+schema:
+  DOWNLOAD_DIR: "str?"
+#environment:
+#  DOWNLOAD_DIR: "/media/My_Music/Youtube"
