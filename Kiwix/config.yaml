@@ -31,5 +31,5 @@ hassio_api: true
 #  data_location: "/media/My_Music/Youtube"
 #schema:
 #  data_location: "str?"
-#environment:
-#  data: "/share/zim"
+environment:
+  data: "/share/zim"
