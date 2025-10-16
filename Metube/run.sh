@@ -21,7 +21,7 @@ export_options() {
     done
 }
 
-#export_options
+export_options
 # Always reload DB config from options (to ensure up-to-date values after export)
 export DOWNLOAD_DIR="$(bashio::config 'DOWNLOAD_DIR')"
 
