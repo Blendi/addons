@@ -1,7 +1,7 @@
 name: "Kiwix"
 description: "Kiwix Encyclopedia"
 version: "3.7.1"
-slug: "folder"
+slug: kiwix-tools
 arch:
   - amd64
   - armv7
@@ -17,10 +17,13 @@ init: "false"
 #ingress_stream: true
 startup: "application"
 ports:
-  8085/tcp: "8085"
+  8085: 8080
 ports_description:
   8085/tcp: "Kiwix Web Port"
 webui: "http://[HOST]:[PORT:8085]"
+volumes:
+  - /share/zim
+hassio_api: true
 #options:
 #  data_location: "/media/MeTube"
 #  data_location: "/media/My_Music/Youtube"
