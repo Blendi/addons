@@ -1,16 +1,20 @@
-#FROM ghcr.io/kiwix/kiwix-serve:3.7.0
-ARG BUILD_FROM
-#AGR ghcr.io/kiwix/kiwix-serve:3.7.0
-FROM ghcr.io/kiwix/kiwix-tools:3.7.0
+# Use the official base image
+FROM ghcr.io/hassio-addons/base:12.2.7
 
-# Set up necessary environment variables
-ENV LANG C.UTF-8
+# Install required dependencies (if any)
+RUN apt-get update && apt-get install -y \
+    curl \
+    bash \
+    && rm -rf /var/lib/apt/lists/*
 
-
-
-# Copy run script (optional)
+# Copy the run.sh script into the container
 COPY run.sh /run.sh
-#COPY run.sh /
-RUN chmod a+x /run.sh
 
+# Make the run.sh script executable
+RUN chmod +x /run.sh
+
+# Set the working directory
+WORKDIR /data
+
+# The default command to run when the container starts
 CMD [ "/run.sh" ]
