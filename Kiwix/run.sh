@@ -1,13 +1,19 @@
 #!/usr/bin/with-contenv bashio
 
-# Print a log message
+# Log start message
 echo "Starting Kiwix Tools in the container..."
 
-# Mount the Home Assistant 'share/zim' folder to /data in the container
-# and map port 8085 from the host to 8080 inside the container.
-docker run -d \
-  --name kiwix-tools \
-  --restart=unless-stopped \
-  -v /share/zim:/data \
-  -p 8085:8080 \
-  ghcr.io/kiwix/kiwix-tools:3.7.0
+# Check if the ZIM folder exists
+if [ ! -d "/share/zim" ]; then
+    echo "ZIM folder not found. Please ensure /share/zim contains ZIM files."
+    exit 1
+fi
+
+# Copy ZIM files from Home Assistant's /share/zim to /data/zim
+cp -r /share/zim/* /data/zim/
+
+# Run kiwix-serve to serve the ZIM files on port 8080
+kiwix-serve --port 8080 /data/zim/*.zim &
+
+# Keep the script running to keep the container alive
+wait
