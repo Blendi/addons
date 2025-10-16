@@ -1,7 +1,7 @@
 #FROM ghcr.io/kiwix/kiwix-serve:3.7.0
 ARG BUILD_FROM
 #AGR ghcr.io/kiwix/kiwix-serve:3.7.0
-FROM ghcr.io/kiwix/kiwix-serve:3.7.0
+FROM ghcr.io/kiwix/kiwix-tools:3.1.2
 
 # Set up necessary environment variables
 ENV LANG C.UTF-8
