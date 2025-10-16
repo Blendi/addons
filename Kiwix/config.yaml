@@ -27,4 +27,4 @@ webui: "http://[HOST]:[PORT:8085]"
 #schema:
 #  data_location: "str?"
 environment:
-  data: "/share/zim"
+  /data: "/share/zim"
