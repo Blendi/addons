@@ -1,5 +1,6 @@
-#!/usr/bin/env bash
 #!/usr/bin/env bashio
+# shellcheck shell=bash
+# shellcheck disable=SC2155,SC2016
 echo "Starting MeTube..."
 set -e
 echo "DOWNLOAD_DIR: $DOWNLOAD_DIR"
