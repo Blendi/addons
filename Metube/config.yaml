@@ -27,6 +27,6 @@ options:
   #data_location: "/media/My_Music/MeTube"
   DOWNLOAD_DIR: "/media/My_Music/MeTube"
 schema:
-  DOWNLOAD: "str?"
+  DOWNLOAD_DIR: "str?"
 #environment:
 #  DOWNLOAD_DIR: "/media/My_Music/MeTube"
