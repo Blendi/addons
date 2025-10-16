@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bashio
 # shellcheck shell=bash
 # shellcheck disable=SC2155,SC2016
-echo "Starting MeTube..."
+bashio::log.info "Starting MeTube..."
 set -e
 CONFIG_PATH=/data/options.json
 echo "DOWNLOAD_DIR: $DOWNLOAD_DIR"
