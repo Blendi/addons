@@ -25,7 +25,7 @@ ports_description:
 webui: "http://[HOST]:[PORT:8081]"
 options:
   #data_location: "/media/My_Music/MeTube"
-  DOWNLOAD_DIR: "{{/media/My_Music/MeTube}}"
+  DOWNLOAD_DIR: "/media/My_Music/Youtube"
 schema:
   DOWNLOAD_DIR: "str?"
 #environment:
