@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bashio
+#!/usr/bin/env bash
 
 # Log message to indicate that the add-on is starting
 echo "Starting Kiwix Tools in the container..."
