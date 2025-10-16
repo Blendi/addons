@@ -1,11 +1,11 @@
 name: "Kiwix"
 description: "Kiwix Encyclopedia"
-version: "3.7.0"
+version: "3.7.0-1"
 slug: "folder"
 arch:
   - amd64
   - armv7
-url: "https://ghcr.io/kiwix/kiwix-serve:3.7.0"
+url: "https://ghcr.io/kiwix/kiwix-tools:3.7.0"
 map:
   - type: share
     read_only: False
