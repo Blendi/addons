@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/ash
 # Use POSIX-compliant script for `sh` shell
 
 set -e
