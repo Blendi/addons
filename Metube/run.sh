@@ -6,7 +6,10 @@ set -e
 #echo "Fetching DOWNLOAD_DIR from config.yaml..."
 logger "Fetching DOWNLOAD_DIR from config.yaml..."
 # Fetch value from config.yaml using bashio
-DOWNLOAD_DIR=$(bashio::config 'download_dir')
+DOWNLOAD_DIR=$(bashio::config 'DOWN_DIR')
+
+DOWNLOAD_DIR="${DOWN_DIR:-/media/My_Music/Youtube}"
+
 
 # Check if DOWNLOAD_DIR is empty
 if [ -z "$DOWNLOAD_DIR" ]; then
