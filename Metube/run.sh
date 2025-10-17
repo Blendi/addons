@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 # Use POSIX-compliant script for `sh` shell
 
 # THIS LINE IS CRUCIAL to load the bashio functions
