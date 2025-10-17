@@ -1,6 +1,6 @@
-#!/usr/bin/env sh
-# shellcheck shell=sh
-# shellcheck disable=SC2155,SC2016
+#!/bin/sh
+# Use POSIX-compliant script for `sh` shell
+
 set -e
 
 #echo "Fetching DOWNLOAD_DIR from config.yaml..."
