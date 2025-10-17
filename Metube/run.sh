@@ -2,9 +2,21 @@
 # shellcheck shell=bash
 # shellcheck disable=SC2155,SC2016
 set -e
-echo "DOWNLOAD_DIR: $DOWNLOAD_DIR"
-# Always reload DB config from options (to ensure up-to-date values after export)
-export DOWNLOAD_DIR = $(bashio::config 'DOWNLOAD_DIR')
-#export DOWNLOAD_DIR="$DOWNLOAD_DIR"
+echo "Fetching DOWNLOAD_DIR from config.yaml..."
 
+# Fetch value from config.yaml using bashio
+DOWNLOAD_DIR=$(bashio::config 'download_dir')
+
+# Check if DOWNLOAD_DIR is empty
+if [ -z "$DOWNLOAD_DIR" ]; then
+  echo "DOWNLOAD_DIR is not set in config.yaml. Exiting."
+  exit 1
+fi
+
+echo "Using DOWNLOAD_DIR: $DOWNLOAD_DIR"
+
+# Export the value to the environment
+export DOWNLOAD_DIR
+
+# Run the Python script
 exec python3 -m metube
