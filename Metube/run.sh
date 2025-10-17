@@ -2,8 +2,9 @@
 # shellcheck shell=bash
 # shellcheck disable=SC2155,SC2016
 set -e
-echo "Fetching DOWNLOAD_DIR from config.yaml..."
 
+#echo "Fetching DOWNLOAD_DIR from config.yaml..."
+logger "Fetching DOWNLOAD_DIR from config.yaml..."
 # Fetch value from config.yaml using bashio
 DOWNLOAD_DIR=$(bashio::config 'download_dir')
 
@@ -13,8 +14,8 @@ if [ -z "$DOWNLOAD_DIR" ]; then
   exit 1
 fi
 
-echo "Using DOWNLOAD_DIR: $DOWNLOAD_DIR"
-
+#echo "Using DOWNLOAD_DIR: $DOWNLOAD_DIR"
+logger "Using DOWNLOAD_DIR: $DOWNLOAD_DIR"
 # Export the value to the environment
 export DOWNLOAD_DIR
 
