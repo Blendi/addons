@@ -1,6 +1,6 @@
 name: "MeTube TEST"
 description: "YouTube music downloader"
-version: "0.1.323"
+version: "0.1.324"
 slug: "metube"
 arch:
   - amd64
