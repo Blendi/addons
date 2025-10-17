@@ -15,7 +15,7 @@ RUN git clone https://github.com/hassio-addons/bashio.git /tmp/bashio \
     && rm -r /tmp/bashio
 
 # 3. Clean up
-RUN apk del curl
+RUN apk del git
 
 # Copy run script (optional)
 COPY run.sh /run.sh
