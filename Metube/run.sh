@@ -11,16 +11,17 @@ set -e
 #logger "Fetching DOWNLOAD_DIR from config.yaml..."
 bashio::log.info "Fetching DOWN_DIR from add-on configuration..."
 # Fetch value from config.yaml using bashio
-CONFIG_DOWN_DIR=$(bashio::config 'DOWN_DIR')
+#CONFIG_DOWN_DIR=$(bashio::config 'DOWN_DIR')
 
-DOWNLOAD_DIR="${CONFIG_DOWN_DIR:-/media/My_Music/Youtube}"
+#DOWNLOAD_DIR="${CONFIG_DOWN_DIR:-/media/My_Music/Youtube}"
 
+export DOWNLOAD_DIR=$(jq -r '.DOWN_DIR' /data/options.json)
 
 # Check if DOWNLOAD_DIR is empty
-if [ -z "$DOWNLOAD_DIR" ]; then
-  echo "DOWNLOAD_DIR is not set in config.yaml. Exiting."
-  exit 1
-fi
+#if [ -z "$DOWNLOAD_DIR" ]; then
+#  echo "DOWNLOAD_DIR is not set in config.yaml. Exiting."
+#  exit 1
+#fi
 
 #echo "Using DOWNLOAD_DIR: $DOWNLOAD_DIR"
 #logger "Using DOWNLOAD_DIR: $DOWNLOAD_DIR"
@@ -29,4 +30,4 @@ bashio::log.info "Using DOWNLOAD_DIR: ${DOWNLOAD_DIR}"
 # Export the value to the environment
 export DOWNLOAD_DIR
 # Run the Python script
-exec python3 -m metube
+#exec python3 -m metube
