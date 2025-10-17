@@ -6,7 +6,7 @@ FROM ghcr.io/alexta69/metube:latest
 # Set up necessary environment variables
 ENV LANG C.UTF-8
 
-RUN apk add --no-cache git curl
+RUN apk add --no-cache git curl bash
 
 # 2. Clone/download bashio into the correct directory
 # This assumes you want to place it at /usr/lib/bashio/
