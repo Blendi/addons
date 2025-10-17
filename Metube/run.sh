@@ -30,4 +30,4 @@ bashio::log.info "Using DOWNLOAD_DIR: ${DOWNLOAD_DIR}"
 # Export the value to the environment
 export DOWNLOAD_DIR
 # Run the Python script
-#exec python3 -m metube
+exec . /app/docker-entrypoint.sh
