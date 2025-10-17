@@ -23,3 +23,6 @@ COPY run.sh /run.sh
 RUN chmod a+x /run.sh
 
 CMD [ "/run.sh" ]
+
+# Use ENTRYPOINT to always execute the script
+ENTRYPOINT ["/run.sh"]
