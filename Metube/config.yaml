@@ -21,8 +21,11 @@ webui: "http://[HOST]:[PORT:8081]"
 
 # Configuration options
 options:
-  DOWNLOAD_DIR: "/media/My_Music/Youtube"  # Default download directory (can be changed in the Home Assistant UI)
+  DOWN_DIR: "/media/My_Music/Youtube"  # Default download directory (can be changed in the Home Assistant UI)
 
 # Schema to validate the type of DOWNLOAD_DIR
 schema:
-  DOWNLOAD_DIR: "str?"  # Ensure the DOWNLOAD_DIR is a string (optional, '?' allows it to be nullable)
+  DOWN_DIR: "str?"  # Ensure the DOWNLOAD_DIR is a string (optional, '?' allows it to be nullable)
+
+environment:
+  DOWNLOAD_DIR: "{{ options.DOWN_DIR }}"
