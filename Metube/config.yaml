@@ -27,5 +27,5 @@ options:
 schema:
   DOWN_DIR: "str?"  # Ensure the DOWNLOAD_DIR is a string (optional, '?' allows it to be nullable)
 
-environment:
-  DOWNLOAD_DIR: "{{ options.DOWN_DIR }}"
+#environment:
+#  DOWNLOAD_DIR: "{{ options.DOWN_DIR }}"
