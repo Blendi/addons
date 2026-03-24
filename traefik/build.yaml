@@ -6,4 +6,4 @@ build_from:
   i386: ghcr.io/hassio-addons/base/i386:17.2.1
 args:
 #  TRAEFIK_VERSION: 2.10.5
-  TRAEFIK_VERSION: 3.3.4
+  TRAEFIK_VERSION: 2.11.41
