@@ -14,6 +14,7 @@ RUN if [ "${BUILD_ARCH}" == "aarch64" ]; then BUILD_ARCH=arm64; \
     wget --quiet -O /tmp/traefik.tar.gz "https://github.com/traefik/traefik/releases/download/v${TRAEFIK_VERSION}/traefik_v${TRAEFIK_VERSION}_linux_${BUILD_ARCH}.tar.gz" && \
     tar xzvf /tmp/traefik.tar.gz -C /usr/local/bin traefik && \
     chmod +x /usr/local/bin/traefik && \
+    chmod +x /etc/cont-init.d/traefik.sh && \
     rm -f /tmp/*
 
 COPY rootfs /
