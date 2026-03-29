@@ -1,5 +1,5 @@
 name: Traefik_V2
-version: 2.11.41-8
+version: 2.11.41-9
 slug: traefik
 description: |
   Traefik is a modern HTTP reverse proxy and load balancer that makes deploying
@@ -16,8 +16,8 @@ stage: stable
 boot: auto
 url: https://github.com/Blendi/addons/blob/main/traefik/
 ports:
-  80/tcp: 80
-  443/tcp: 443
+  80/tcp: 8003
+  443/tcp: 44303
 ports_description:
   80/tcp: HTTP
   443/tcp: HTTPS
