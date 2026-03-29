@@ -1,5 +1,5 @@
 name: Traefik_V2
-version: 2.11.11-0
+version: 2.11.6-0
 slug: traefik
 description: |
   Traefik is a modern HTTP reverse proxy and load balancer that makes deploying
