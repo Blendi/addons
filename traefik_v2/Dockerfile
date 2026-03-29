@@ -18,7 +18,7 @@ RUN if [ "${BUILD_ARCH}" == "aarch64" ]; then BUILD_ARCH=arm64; \
     rm -f /tmp/*
 
 COPY rootfs /
-#RUN chmod +x /etc/cont-init.d/traefik.sh /etc/services.d/traefik/* etc/services.d/nginx/*
+RUN chmod +x /etc/cont-init.d/traefik.sh /etc/services.d/traefik/* etc/services.d/nginx/*
 LABEL \
     io.hass.name="Treafik for ${BUILD_ARCH}" \
     io.hass.description="Home Assistant Unofficial Add-on: ${BUILD_ARCH} Traefik image" \
