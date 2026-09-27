@@ -1,6 +1,6 @@
 name: Traefik v2.11.xx
 version: 2.11.57
-slug: traefik
+slug: traefik_2.11.xx
 description: |
   Traefik is a modern HTTP reverse proxy and load balancer that makes deploying
   microservices easy.
