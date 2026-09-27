@@ -1,14 +1,11 @@
 # FORKED FROM https://github.com/alex3305/home-assistant-addons
 
-# Unofficial Home Assistant Add-ons: Traefik
+# Unofficial Home Assistant Add-ons: Traefik 3.7.xx
 
 Traefik bundled as an Home Assistant add-on.
 
 ![aarch64-shield](https://img.shields.io/badge/aarch64-yes-green)
 ![amd64-shield](https://img.shields.io/badge/amd64-yes-green)
-![armhf-shield](https://img.shields.io/badge/armhf-yes-green)
-![armv7-shield](https://img.shields.io/badge/armv7-yes-green)
-![i386-shield](https://img.shields.io/badge/i386-yes-green)
 
 ![Build and test Traefik](https://github.com/alex3305/home-assistant-addons/workflows/Build%20and%20test%20Traefik/badge.svg?branch=master)
 
