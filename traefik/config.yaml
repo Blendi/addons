@@ -1,6 +1,6 @@
 name: Traefik 3.7.xx
 version: 3.7.13.a
-slug: traefik
+slug: traefik_3.7.xx
 description: |
   Traefik is a modern HTTP reverse proxy and load balancer that makes deploying
   microservices easy.
