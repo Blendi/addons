@@ -31,7 +31,7 @@ options:
   log_level: info
   access_logs: false
   forwarded_headers_insecure: false
-  dynamic_configuration_path: "/config/addons_config/traefik_temp/"
+  dynamic_configuration_path: "/config/addons_config/traefik_3.7.xx/"
   letsencrypt:
     enabled: false
     resolvers: []
