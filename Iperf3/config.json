@@ -2,6 +2,7 @@
     "name": "iPerf3",
     "version": "0.1.21",
     "slug": "iperf3",
+    "image": "ghcr.io/fredrikbaberg/addon-iperf3-{arch}"
     "description": "iPerf3 add-on for Home Assistant",
     "arch": ["amd64", "aarch64"],
     "url": "https://iperf.fr/iperf-doc.php",
