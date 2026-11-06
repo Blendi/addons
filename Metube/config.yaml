@@ -1,15 +1,14 @@
-name: "MeTube TEST"
+name: "MeTube"
 description: "YouTube music downloader"
-version: "0.1.324"
+version: "0.1.43"
 slug: "metube"
 arch:
   - amd64
-  - armv7
 url: "https://github.com/alexta69/metube/pkgs/container/metube"
 map:
   - type: media
     read_only: False
-  - type: data
+  - type: share
     read_only: False
 init: "false"
 startup: "application"
@@ -18,14 +17,7 @@ ports:
 ports_description:
   8081/tcp: "MeTube Web Port"
 webui: "http://[HOST]:[PORT:8081]"
-
-# Configuration options
 options:
-  DOWN_DIR: "/media/My_Music/Youtube"  # Default download directory (can be changed in the Home Assistant UI)
-
-# Schema to validate the type of DOWNLOAD_DIR
+  DOWNLOAD_DIR: "/media/My_Music/Youtube"
 schema:
-  DOWN_DIR: "str?"  # Ensure the DOWNLOAD_DIR is a string (optional, '?' allows it to be nullable)
-
-#environment:
-#  DOWNLOAD_DIR: "{{ options.DOWN_DIR }}"
+  DOWNLOAD_DIR: "str"
