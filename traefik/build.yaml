@@ -3,4 +3,4 @@ build_from:
   amd64: ghcr.io/hassio-addons/base/amd64:21.0.6
 args:
 #  TRAEFIK_VERSION: 2.10.5
-  TRAEFIK_VERSION: 3.7.16
+  TRAEFIK_VERSION: 3.7.17
