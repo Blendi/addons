@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "slug": "iperf3",
     "description": "iPerf3 add-on for Home Assistant",
-    "arch": ["armv7", "amd64", "armhf", "aarch64", "i386"],
+    "arch": ["amd64", "armhf", "aarch64", "i386"],
     "url": "https://github.com/fredrikbaberg/hassio-addons",
     "boot": "manual",
     "ports": {
