@@ -25,7 +25,7 @@ hassio_role: default
 hassio_api: true
 panel_icon: mdi:earth-arrow-right
 map:
-  - config
+  - homeassistant_config
   - share
   - ssl:rw
 options:
