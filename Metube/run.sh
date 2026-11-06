@@ -1,33 +1,28 @@
-#!/bin/bash
-# Use POSIX-compliant script for `sh` shell
-
-# THIS LINE IS CRUCIAL to load the bashio functions
-# It must match where bashio was installed in your Dockerfile.
-. /usr/lib/bashio/bashio.sh 👈 Make sure this path is correct!
-
+#!/bin/sh
 set -e
 
-#echo "Fetching DOWNLOAD_DIR from config.yaml..."
-#logger "Fetching DOWNLOAD_DIR from config.yaml..."
-bashio::log.info "Fetching DOWN_DIR from add-on configuration..."
-# Fetch value from config.yaml using bashio
-#CONFIG_DOWN_DIR=$(bashio::config 'DOWN_DIR')
+# Read user-configured DOWNLOAD_DIR from Home Assistant options
+DOWNLOAD_DIR="/media/My_Music/Youtube"
+if [ -f "/data/options.json" ]; then
+    CONFIG_DIR=$(sed -n 's/.*"DOWNLOAD_DIR":[[:space:]]*"\([^"]*\)".*/\1/p' /data/options.json 2>/dev/null || true)
+    if [ -n "$CONFIG_DIR" ]; then
+        DOWNLOAD_DIR="$CONFIG_DIR"
+    fi
+fi
 
-#DOWNLOAD_DIR="${CONFIG_DOWN_DIR:-/media/My_Music/Youtube}"
+bashio::log.info "--------------------------------------------------"
+bashio::log.info "Configuring MeTube Download Location..."
+bashio::log.info "Target path: ${DOWNLOAD_DIR}"
+bashio::log.info "--------------------------------------------------"
 
-export DOWNLOAD_DIR=$(jq -r '.DOWN_DIR' /data/options.json)
+# Ensure target directory exists on mapped media mount
+mkdir -p "${DOWNLOAD_DIR}"
 
-# Check if DOWNLOAD_DIR is empty
-#if [ -z "$DOWNLOAD_DIR" ]; then
-#  echo "DOWNLOAD_DIR is not set in config.yaml. Exiting."
-#  exit 1
-#fi
+# Export output directory expected by MeTube
+export OUTPUT_DIR="${DOWNLOAD_DIR}"
 
-#echo "Using DOWNLOAD_DIR: $DOWNLOAD_DIR"
-#logger "Using DOWNLOAD_DIR: $DOWNLOAD_DIR"
-bashio::log.info "Using DOWNLOAD_DIR: ${DOWNLOAD_DIR}"
+# Explicitly add application directories to Python's module search path
+export PYTHONPATH="/app:/app/app:${PYTHONPATH}"
 
-# Export the value to the environment
-export DOWNLOAD_DIR
-# Run the Python script
-exec . /app/docker-entrypoint.sh
+bashio::log.info "Starting MeTube..."
+exec "$@"
