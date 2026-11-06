@@ -1,28 +1,12 @@
-#FROM ghcr.io/alexta69/metube:latest
-ARG BUILD_FROM
-#AGR ghcr.io/alexta69/metube:latest
 FROM ghcr.io/alexta69/metube:latest
 
-# Set up necessary environment variables
 ENV LANG C.UTF-8
 
-RUN apk add --no-cache git curl bash jq
-
-# 2. Clone/download bashio into the correct directory
-# This assumes you want to place it at /usr/lib/bashio/
-RUN git clone https://github.com/hassio-addons/bashio.git /tmp/bashio \
-    && mv /tmp/bashio/lib /usr/lib/bashio \
-    && rm -r /tmp/bashio
-
-# 3. Clean up
-RUN apk del git
-
-# Copy run script (optional)
+# Copy startup script and make executable
 COPY run.sh /run.sh
-#COPY run.sh /
-RUN chmod a+x /run.sh
+RUN chmod +x /run.sh
 
-CMD [ "/run.sh" ]
+WORKDIR /app
 
-# Use ENTRYPOINT to always execute the script
-ENTRYPOINT ["/run.sh"]
+ENTRYPOINT ["/bin/sh", "/run.sh"]
+CMD ["python3", "-m", "app.main"]
