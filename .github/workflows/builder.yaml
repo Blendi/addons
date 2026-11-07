@@ -23,13 +23,13 @@ jobs:
         addon:
           - name: traefik
             target: traefik
-            image: traefik
+            image: ghcr.io/blendi/traefik
           - name: Iperf3
             target: Iperf3
-            image: iperf3
+            image: ghcr.io/blendi/iperf3
           - name: metube
             target: metube
-            image: metube
+            image: ghcr.io/blendi/metube
 
     steps:
       - name: Checkout repository
