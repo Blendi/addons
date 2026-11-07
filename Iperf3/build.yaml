@@ -1,0 +1,5 @@
+build_from:
+  amd64: ghcr.io/hassio-addons/base/amd64:21.0.10
+  aarch64: ghcr.io/hassio-addons/base/aarch64:21.0.10
+  armhf: ghcr.io/hassio-addons/base/armhf:21.0.10
+  i386: ghcr.io/hassio-addons/base/i386:21.0.10
