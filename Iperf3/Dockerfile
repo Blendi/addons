@@ -6,3 +6,4 @@ RUN apk add --no-cache iperf3
 
 # Copy rootfs if you have one, or remove this line if the folder doesn't exist
 COPY rootfs/ /
+RUN chmod +x /etc/services.d/iperf3/run
