@@ -2,4 +2,5 @@
 
 bashio::log.info "Starting iperf3..."
 
-iperf3 $(bashio::config 'arguments')
+#iperf3 $(bashio::config 'arguments')
+exec iperf3 -s $(bashio::config 'arguments')
