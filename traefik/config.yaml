@@ -13,6 +13,7 @@ init: false
 stage: stable
 boot: auto
 url: https://github.com/Blendi/addons/blob/main/traefik/
+image: ghcr.io/blendi/traefik-{arch}
 ports:
   80/tcp: 80
   443/tcp: 443
@@ -25,7 +26,7 @@ hassio_role: default
 hassio_api: true
 panel_icon: mdi:earth-arrow-right
 map:
-  - homeassistant_config
+  - homeassistant
   - share
   - ssl:rw
 options:
