@@ -6,6 +6,7 @@
     "arch": ["amd64", "aarch64"],
     "url": "https://iperf.fr/iperf-doc.php",
     "boot": "manual",
+    "init": false,
     "ports": {
         "5201/tcp": 5201,
         "5201/udp": 5201
