@@ -41,8 +41,5 @@ jobs:
         with:
           args: |
             --target ${{ matrix.addon.target }} \
-            --image "ghcr.io/${{ github.repository_owner }}/${{ matrix.addon.target }}-{arch}" \
-            --amd64 \
-            --aarch64
             --amd64 \
             --aarch64
