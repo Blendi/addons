@@ -6,14 +6,30 @@ on:
       - main
     paths:
       - "traefik/**"
+      - "Iperf3/**"
+      - "metube/**"
 
 jobs:
   build:
-    name: Build Traefik Add-on
+    name: Build ${{ matrix.addon.name }} Add-on
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        addon:
+          - name: traefik
+            target: traefik
+            image: traefik
+          - name: Iperf3
+            target: Iperf3
+            image: iperf3
+          - name: metube
+            target: metube
+            image: metube
 
     steps:
       - name: Checkout repository
@@ -29,4 +45,8 @@ jobs:
       - name: Build and Publish Add-on
         uses: home-assistant/builder@2026.02.1
         with:
-          args: --target traefik --image "traefik-{arch}" --amd64 --aarch64
+          args: |
+            --target ${{ matrix.addon.target }} \
+            --image "${{ matrix.addon.image }}-{arch}" \
+            --amd64 \
+            --aarch64
