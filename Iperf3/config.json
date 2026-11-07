@@ -1,10 +1,10 @@
 {
     "name": "iPerf3",
-    "version": "3.22.2",
+    "version": "3.22.3",
     "slug": "iperf3",
     "description": "iPerf3 add-on for Home Assistant",
     "arch": ["amd64", "aarch64"],
-    "image": "ghcr.io/blendi/ghcr.io/blendi/iperf3-{arch}",
+    "image": "iperf3-{arch}",
     "boot": "manual",
     "init": false,
     "ports": {
