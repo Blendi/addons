@@ -7,7 +7,7 @@ on:
     paths:
       - "traefik/**"
       - "Iperf3/**"
-      - "metube/**"
+      - "Metube/**"
 
 jobs:
   build:
@@ -27,8 +27,8 @@ jobs:
           - name: Iperf3
             target: Iperf3
             image: ghcr.io/blendi/iperf3
-          - name: metube
-            target: metube
+          - name: Metube
+            target: Metube
             image: ghcr.io/blendi/metube
 
     steps:
