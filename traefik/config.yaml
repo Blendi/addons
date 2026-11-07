@@ -1,5 +1,5 @@
 name: Traefik 3.7.xx
-version: 3.7.17
+version: 3.7.17.a
 slug: traefik_v3
 description: |
   Traefik is a modern HTTP reverse proxy and load balancer that makes deploying
@@ -7,7 +7,7 @@ description: |
 arch:
   - aarch64
   - amd64
-image: "ghcr.io/blendi/traefik-{arch}"
+image: "traefik-{arch}"
 startup: system
 init: false
 stage: stable
