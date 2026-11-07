@@ -22,10 +22,8 @@ jobs:
         addon:
           - name: traefik
             target: traefik
-            image: ghcr.io/blendi/traefik
           - name: Iperf3
             target: Iperf3
-            image: ghcr.io/blendi/iperf3
 
     steps:
       - name: Checkout repository
@@ -43,6 +41,8 @@ jobs:
         with:
           args: |
             --target ${{ matrix.addon.target }} \
-            --image "${{ matrix.addon.image }}-{arch}" \
+            --image "ghcr.io/${{ github.repository_owner }}/${{ matrix.addon.target }}-{arch}" \
+            --amd64 \
+            --aarch64
             --amd64 \
             --aarch64
