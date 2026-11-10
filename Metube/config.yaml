@@ -5,7 +5,7 @@ slug: "metube"
 arch:
   - amd64
 url: "https://github.com/alexta69/metube/pkgs/container/metube"
-image: "ghcr.io/blendi/metube-{arch}",
+#image: "ghcr.io/blendi/metube-{arch}"
 map:
   - type: media
     read_only: False
